@@ -2,9 +2,9 @@ package handler
 
 import (
 	"encoding/json"
-	"net/http"
-	"go-url-shortener-service/storage"
 	"go-url-shortener-service/shortener"
+	"go-url-shortener-service/storage"
+	"net/http"
 )
 
 // ShortenURL returns a handler function that shortens URLs
