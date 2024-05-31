@@ -7,7 +7,6 @@ import (
 	"net/http"
 )
 
-
 func main() {
 	// Setup URL storage
 	urlStore := storage.NewURLStore()
@@ -20,15 +19,13 @@ func main() {
 		redirect(w, r, urlStore)
 	})
 
-
-
 	// Start the HTTP server on port 8080
 	log.Println("Starting URL shortener service on http://localhost:8080...")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
 func redirect(w http.ResponseWriter, r *http.Request, urlStore *storage.URLStore) {
-	// Extract the short code from the URL path
+	//slice expression is used to remove the leading slash and extract the actual short code from the URL path
 	shortCode := r.URL.Path[1:]
 
 	// Look up the original URL in the store
