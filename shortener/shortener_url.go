@@ -5,8 +5,8 @@ import (
 	"time"
 )
 
-// generateRandomCode generates a random alphanumeric string of given length
-func generateShortCode(length int) string {
+// generateShortCode generates a random alphanumeric string of given length
+func GenerateShortCode(length int) string {
 	const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 	rand.Seed(time.Now().UnixNano())
 
