@@ -57,7 +57,9 @@ follow below testing section for the testing purpose and to see metrics
 You can test the program by making requests using the terminal. Here are some examples:
 
 - To shorten a URL: Run the following command in your terminal:
+
     `Invoke-RestMethod -Method POST -Uri "http://localhost:8080/shorten" -ContentType "application/json" -Body '{"url": "https://www.udemy.com/"}'`
+    
 This command will shorten the URL "https://www.udemy.com/" and return a shortened link.
 
 - To check metrics of shortened URLs: Use the following command:
