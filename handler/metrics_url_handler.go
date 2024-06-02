@@ -20,7 +20,7 @@ func TopDomainsHandler(urlStore *storage.URLStore) http.HandlerFunc {
 		}
 
 		w.Header().Set("Content-Type", "application/json")
-		//Encoding the domainCounts map as JSON and sending it as the response
+		//Encoding the domainCounts map as JSON and sending it as the response to the user
 		json.NewEncoder(w).Encode(domainCounts)
 	}
 }

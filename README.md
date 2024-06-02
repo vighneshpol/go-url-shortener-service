@@ -1,6 +1,6 @@
 # Go URL Shortener Service
 
-A simple URL shortener service written in Go. This project provides a RESTful API for shortening URLs, retrieving the original URLs, and tracking the top domains that have been shortened the most. It features a clean code architecture, comprehensive unit tests, and includes a metrics API to monitor the most frequently shortened domains.
+    A simple URL shortener service written in Go. This project provides a RESTful API for shortening URLs, retrieving the original URLs, and tracking the top domains that have been shortened the most. It features a clean code architecture, comprehensive unit tests, and includes a metrics API to monitor the most frequently shortened domains.
 
 ## Features
 
@@ -36,47 +36,50 @@ A simple URL shortener service written in Go. This project provides a RESTful AP
 
 1. Clone the repository:
 
-`git clone https://github.com/vighneshpol/go-url-shortener-service.git`
-
+    `git clone https://github.com/vighneshpol/go-url-shortener-service.git`
 
 2. Navigate to the project directory:
-`cd go-url-shortener-service`
+    `cd go-url-shortener-service`
 
+3. Initialize Go Module(Optional as i have push go.mod already)
+    `go mod init`
 
-## Usage
-1. Initialize Go Module(Optional as i have push go.mod already)
-`go mod init`
+4. Run the main file
+    `go run main.go`
 
-2. Run the main file
-`go run main.go`
+5. The server will start running on
+    `http://localhost:8080`
 
-3. The server will start running on
-`http://localhost:8080`
+follow below testing section for the testing purpose and to see metrics
 
-4. Now to test the URL go to terminal and try to hit different POST methods 
-`Invoke-RestMethod -Method POST -Uri "http://localhost:8080/shorten" -ContentType "application/json" -Body '{"url": "https://www.udemy.com/"}'`
-`Invoke-RestMethod -Method POST -Uri "http://localhost:8080/shorten" -ContentType "application/json" -Body '{"url": "https://www.udemy.com/pricing/"}'`
+### Testing:
 
-5. Now to check metrics use the below GET command 
-`Invoke-RestMethod -Method GET -Uri "http://localhost:8080/metrics"`
+You can test the program by making requests using the terminal. Here are some examples:
 
-## To run the application using Docker:
+- To shorten a URL: Run the following command in your terminal:
+    `Invoke-RestMethod -Method POST -Uri "http://localhost:8080/shorten" -ContentType "application/json" -Body '{"url": "https://www.udemy.com/"}'`
+This command will shorten the URL "https://www.udemy.com/" and return a shortened link.
+
+- To check metrics of shortened URLs: Use the following command:
+    `Invoke-RestMethod -Method GET -Uri "http://localhost:8080/metrics"`
+This command retrieves metrics about the most frequently shortened URLs, including the top three domains.
+
+### Using Docker (Optional, for easier Setup):
+
+If you prefer using Docker, follow these steps:
 
 1. Pull the Docker image (if not built locally):
-    `docker pull <registry_url>/<image_name>`
+    `docker pull vigupol/golangproject`
 
-2. Build the Docker image (if not pulled):
-    `docker build -t go-url-shortener-service .`
+2. Run the Docker container:
+    `docker run -p 8080:8080 vigupol/golangproject:latest`
 
-3. Run the Docker container:
-    `docker run -p 8080:8080 go-url-shortener-service`
-
-4. To check if the container is running, execute parallely on the new terminal window:
+3. To check if the container is running, execute parallely on the new terminal window:
     `docker ps`
 
-5. Now to test the URL go to terminal and try to hit different POST methods 
-    `Invoke-RestMethod -Method POST -Uri "http://localhost:8080/shorten" -ContentType "application/json" -Body '{"url": "https://www.udemy.com/"}'`
-    `Invoke-RestMethod -Method POST -Uri "http://localhost:8080/shorten" -ContentType "application/json" -Body '{"url": "https://www.udemy.com/pricing/"}'`
+Now you can use the program the same way as before, but through Docker.
 
-5. Now to check metrics use the below GET command 
-    `Invoke-RestMethod -Method GET -Uri "http://localhost:8080/metrics"`
+---
+
+With these instructions, you should be able to use the URL Shortener Service without any problems. If you have any questions or need help, feel free to reach out!
+
