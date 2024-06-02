@@ -19,6 +19,10 @@ func main() {
 		redirect(w, r, urlStore)
 	})
 
+
+	// Define the route for retrieving metrics
+	http.HandleFunc("/metrics", handler.TopDomainsHandler(urlStore))
+
 	// Start the HTTP server on port 8080
 	log.Println("Starting URL shortener service on http://localhost:8080...")
 	log.Fatal(http.ListenAndServe(":8080", nil))
