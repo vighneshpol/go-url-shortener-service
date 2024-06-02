@@ -93,7 +93,7 @@ If you prefer using Docker, follow these steps:
 
     `docker ps`
 
-Now you can use the program the same way as before, but through Docker.
+Now you can use the program the same way as before.
 
 ---
 
