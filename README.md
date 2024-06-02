@@ -72,6 +72,7 @@ You can test the program by making requests using the terminal. Here are some ex
 This command will shorten the URL "https://www.udemy.com/" and return a shortened link.
 
 - To check metrics of shortened URLs: Use the following command:
+
     `Invoke-RestMethod -Method GET -Uri "http://localhost:8080/metrics"`
 
 This command retrieves metrics about the most frequently shortened URLs, including the top three domains.
